@@ -17,10 +17,10 @@
 
 ## 📂 Project Structure
 
-├── news_crawler.py # 뉴스 크롤링 및 Kafka 발행 (Producer)
-├── consumer.py # Kafka Consumer (뉴스 데이터 수신)
-├── identify_company_module.py # 기업명 매칭 로직
-├── company_whitelist.py # 기업 리스트 및 키워드/가중치 정의
-├── news_list.py # 크롤링 대상 뉴스 사이트 및 MongoDB 설정
-├── requirements.txt # Python 패키지 의존성
-└── test.ipynb # 기능 테스트용 Jupyter Notebook
+- ├── news_crawler.py # 뉴스 크롤링 및 Kafka 발행 (Producer)
+- ├── consumer.py # Kafka Consumer (뉴스 데이터 수신)
+- ├── identify_company_module.py # 기업명 매칭 로직
+- ├── company_whitelist.py # 기업 리스트 및 키워드/가중치 정의
+- ├── news_list.py # 크롤링 대상 뉴스 사이트 및 MongoDB 설정
+- ├── requirements.txt # Python 패키지 의존성
+- └── test.ipynb # 기능 테스트용 Jupyter Notebook
