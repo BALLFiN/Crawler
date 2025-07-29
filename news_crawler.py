@@ -114,10 +114,6 @@ def get_latest_articles(site):
             return []
 
         res = session.get(site['url'], timeout=10)
-        if res.status_code == 403:
-            print(f"[ERROR] {site['name']} 접근 거부됨 (403 Forbidden): {site['url']}")
-            return []
-
         res.raise_for_status()
         soup = BeautifulSoup(res.text, 'html.parser')
 
@@ -136,6 +132,7 @@ def get_latest_articles(site):
             if not href or site['pattern'] not in href:
                 continue
 
+            # 제목 추출
             # 언론사별로 제목 태그 분기 처리
             if site['name'] in ["매일경제", "헤럴드경제", "한겨레"]:
                 if site['name'] == "매일경제":
@@ -149,14 +146,58 @@ def get_latest_articles(site):
                 title = title_tag.get_text(strip=True)
             else:
                 title = a.get_text(strip=True)
-
             full_url = urljoin(site['base_url'], href)
-            articles.append({'title': title, 'url': full_url})
+
+            # ✅ 이미지 추출
+            img_url = None
+
+            # 1️⃣ 기본: 부모 컨테이너에서 이미지 탐색
+            parent_container = a.find_parent(['li', 'div', 'article'])
+            if parent_container:
+                img_tag = parent_container.select_one(site['image_selector'])
+            else:
+                img_tag = None
+
+            # 2️⃣ 부모에서 못 찾으면 형제 figure 탐색
+            if not img_tag:
+                sibling_figure = a.find_previous_sibling('figure') or a.find_next_sibling('figure')
+                if sibling_figure:
+                    img_tag = sibling_figure.select_one('img')
+
+            # 3️⃣ 이미지 태그에서 src / data-src / style 파싱
+            if img_tag:
+                if img_tag.has_attr('src') and img_tag['src'].strip():
+                    img_url = img_tag['src']
+                elif img_tag.has_attr('data-src') and img_tag['data-src'].strip():
+                    img_url = img_tag['data-src']
+                elif img_tag.has_attr('style'):
+                    match = re.search(r'url\((.*?)\)', img_tag['style'])
+                    if match:
+                        img_url = match.group(1).strip('"').strip("'")
+
+                if img_url:
+                    img_url = urljoin(site['base_url'], img_url)
+
+            # 4️⃣ 백업: data-share-img 속성 확인
+            if not img_url:
+                share_div = parent_container.select_one("div[class^='share-data-']")
+                if share_div and share_div.has_attr("data-share-img"):
+                    img_url = share_div["data-share-img"]
+
+
+
+
+            articles.append({
+                'title': title,
+                'url': full_url,
+                'image': img_url if img_url else None  # ✅ 이미지 없으면 None
+            })
 
         return articles
     except Exception as e:
         print(f"[ERROR] 목록 수집 실패 ({site['name']}) → {e}")
         return []
+
 
 def monitor_news():
     print("\n[실시간 뉴스 모니터링 시작]")
@@ -183,22 +224,22 @@ def monitor_news():
                 top_article = article_list[0]
                 top_url = top_article['url']
                 top_title = top_article['title']
+                top_image = top_article['image']  # ✅ 이미지 URL 추출
 
                 if first_run:
                     last_seen_urls[site_key] = top_url
                     print(f"  🔹 [{site_key}] 초기 기준 기사 설정: {top_title}")
                     continue
 
-                # 1. 가장 상단 뉴스 URL이 이전과 동일하다면 skip
                 if top_url == last_seen_urls[site_key]:
                     continue
 
-                # 2. 뉴스 상세 정보 가져오기
                 details = fetch_article_details(top_url, site=site)
-                if not details or not details['publish_time']:
+                if not details:
                     continue
 
-                pub_time = localize_to_kst(details['publish_time'])
+                pub_time = localize_to_kst(details['publish_time']) if details['publish_time'] else datetime.now(KST)
+
                 if pub_time < SCRIPT_START_TIME:
                     continue
 
@@ -208,14 +249,11 @@ def monitor_news():
                 recent_titles.append(top_title)
                 processed_urls.append(top_url)
 
-                # ✅ 관련 기업 태깅
+                # 기업 태깅
                 company_name, max_score, _ = identify_company(details['title'], details['text'])
-                if company_name == "미국" or company_name == "코스피" or company_name == "다른기업":
-                    company_code = None
-                else:
-                    company_code = STOCK_CODE.get(company_name)
+                company_code = None if company_name in ["미국", "코스피", "다른기업"] else STOCK_CODE.get(company_name)
 
-                # ✅ Kafka 발행
+                # ✅ Kafka 발행 데이터 (이미지 URL 추가)
                 article_data = {
                     "publisher": site['name'],
                     "category": site.get('category', 'N/A'),
@@ -223,20 +261,21 @@ def monitor_news():
                     "published_date": pub_time.strftime('%Y-%m-%d %H:%M:%S'),
                     "content": details['text'],
                     "url": top_url,
+                    "image_url": top_image if top_image else None,  # ✅ 이미지 URL 추가
                     "company_tag": company_name,
                     "company_score": max_score,
                     "stock_code": company_code,
                     "crawled_at": datetime.now(KST).strftime('%Y-%m-%d %H:%M:%S')
                 }
-                
-                send_article_to_kafka(article_data)
 
-                last_seen_urls[site_key] = top_url  # ✅ 저장 성공 후에만 실행
-                print(f"  ✅ 기준 기사 업데이트: {site_key} → {top_title[:50]}...")
+                send_article_to_kafka(article_data)
+                last_seen_urls[site_key] = top_url
+                print(f"  ✅ 기준 기사 업데이트: {site_key} → {top_title[:50]}... (이미지: { '있음' if top_image else '없음'})")
 
         first_run = False
         print(f"\n[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 다음 체크까지 {CHECK_INTERVAL_SECONDS}초 대기...")
         time.sleep(CHECK_INTERVAL_SECONDS)
+
 
 if __name__ == "__main__":
     try:

@@ -15,7 +15,7 @@ print("뉴스 수신 대기 중...")
 
 try:
     while True:
-        msg = consumer.poll(timeout=1.0)
+        msg = consumer.poll(timeout=3.0)
         if msg is None:
             print("⏳ 메시지 없음... 대기 중")
             continue

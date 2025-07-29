@@ -25,6 +25,7 @@ TARGET_SITES = [
         'base_url': 'https://www.sedaily.com',
         'pattern': '/NewsView/',
         'selector': 'li .article_tit a',
+        'image_selector': 'li .thumb img',  # ✅ 이미지 선택자 추가
         'dynamic': False
     },
     {
@@ -34,6 +35,7 @@ TARGET_SITES = [
         'base_url': 'https://www.sedaily.com',
         'pattern': '/NewsView/',
         'selector': 'li .article_tit a',
+        'image_selector': 'li .thumb img',  # ✅ 이미지 선택자 추가
         'dynamic': False
     },
     {
@@ -43,6 +45,7 @@ TARGET_SITES = [
         'base_url': 'https://www.sedaily.com',
         'pattern': '/NewsView/',
         'selector': 'li .article_tit a',
+        'image_selector': 'li .thumb img',  # ✅ 이미지 선택자 추가
         'dynamic': False
     },
     {
@@ -52,6 +55,7 @@ TARGET_SITES = [
         'base_url': 'https://www.sedaily.com',
         'pattern': '/NewsView/',
         'selector': 'li .article_tit a',
+        'image_selector': 'li .thumb img',  # ✅ 이미지 선택자 추가
         'dynamic': False
     },
     
@@ -63,6 +67,7 @@ TARGET_SITES = [
         'base_url': 'https://www.mk.co.kr',
         'pattern': '/news/',
         'selector': 'li.news_node > a.news_item',
+        'image_selector': 'div.thumb_area img',
         'dynamic': False
     },
     {
@@ -72,6 +77,7 @@ TARGET_SITES = [
         'base_url': 'https://www.mk.co.kr',
         'pattern': '/news/',
         'selector': 'li.news_node > a.news_item',
+        'image_selector': 'div.thumb_area img',
         'dynamic': False
     },
     {
@@ -81,6 +87,7 @@ TARGET_SITES = [
         'base_url': 'https://www.mk.co.kr',
         'pattern': '/news/',
         'selector': 'li.news_node > a.news_item',
+        'image_selector': 'div.thumb_area img',
         'dynamic': False
     },
     {
@@ -90,45 +97,8 @@ TARGET_SITES = [
         'base_url': 'https://www.mk.co.kr',
         'pattern': '/news/',
         'selector': 'li.news_node > a.news_item',
+        'image_selector': 'div.thumb_area img',
         'dynamic': False
-    },
-    
-    #파이낸셜 뉴스
-    {
-        'name': '파이낸셜뉴스',
-        'category': '금융',
-        'url': 'https://www.fnnews.com/section/002002000',
-        'base_url': 'https://www.fnnews.com',
-        'pattern': '/news/',
-        'dynamic': True,
-        'selector': 'li .wrap_txt .tit_thumb a'
-    },
-    {
-        'name': '파이낸셜뉴스',
-        'category': '산업',
-        'url': 'https://www.fnnews.com/section/002004001',
-        'base_url': 'https://www.fnnews.com',
-        'pattern': '/news/',
-        'dynamic': True,
-        'selector': 'li .wrap_txt .tit_thumb a'
-    },
-    {
-        'name': '파이낸셜뉴스',
-        'category': '경제',
-        'url': 'https://www.fnnews.com/section/002008001',
-        'base_url': 'https://www.fnnews.com',
-        'pattern': '/news/',
-        'dynamic': True,
-        'selector': 'li .wrap_txt .tit_thumb a'
-    },
-    {
-        'name': '파이낸셜뉴스',
-        'category': '국제',
-        'url': 'https://www.fnnews.com/section/001002002',
-        'base_url': 'https://www.fnnews.com',
-        'pattern': '/news/',
-        'dynamic': True,
-        'selector': 'li .wrap_txt .tit_thumb a'
     },
     
     #연합뉴스
@@ -139,6 +109,7 @@ TARGET_SITES = [
         'base_url': 'https://www.yna.co.kr',
         'pattern': '/view/AKR',
         'selector': 'a.tit-news',
+        'image_selector': 'figure.img-con01 img',
         'dynamic': False
     },
     {
@@ -148,6 +119,7 @@ TARGET_SITES = [
         'base_url': 'https://www.yna.co.kr',
         'pattern': '/view/AKR',
         'selector': 'a.tit-news',
+        'image_selector': 'figure.img-con01 img',
         'dynamic': False
     },
     {
@@ -157,6 +129,7 @@ TARGET_SITES = [
         'base_url': 'https://www.yna.co.kr',
         'pattern': '/view/AKR',
         'selector': 'a.tit-news',
+        'image_selector': 'figure.img-con01 img',
         'dynamic': False
     },
     {
@@ -166,6 +139,7 @@ TARGET_SITES = [
         'base_url': 'https://www.yna.co.kr',
         'pattern': '/view/AKR',
         'selector': 'a.tit-news',
+        'image_selector': 'figure.img-con01 img',
         'dynamic': False
     },
     
@@ -177,40 +151,11 @@ TARGET_SITES = [
         'base_url': 'https://www.infostockdaily.co.kr',
         'pattern': '/news/articleView.html?idxno=',
         'selector': 'div.list-titles > a',
+        'image_selector': '.list-image',
         'dynamic': False
-    },
-
-    #조선비즈
-    {
-        'name': '조선비즈',
-        'category': '산업',
-        'url': 'https://biz.chosun.com/industry/company/',
-        'base_url': 'https://biz.chosun.com',
-        'pattern': '/industry/',
-        'dynamic': True,
-        'selector': 'a.text__link.story-card__headline'
-    },
-    {
-        'name': '조선비즈',
-        'category': '국제',
-        'url': 'https://biz.chosun.com/international/international_general/',
-        'base_url': 'https://biz.chosun.com',
-        'pattern': '/international/',
-        'dynamic': True,
-        'selector': 'a.text__link.story-card__headline'
-    },
-    {
-        'name': '조선비즈',
-        'category': '증권',
-        'url': 'https://biz.chosun.com/stock/stock_general/',
-        'base_url': 'https://biz.chosun.com',
-        'pattern': '/stock/',
-        'dynamic': True,
-        'selector': 'a.text__link.story-card__headline'
     },
     
     #한겨례
-    
     {
         'name': '한겨레',
         'category': '경제',
@@ -218,6 +163,7 @@ TARGET_SITES = [
         'base_url': 'https://www.hani.co.kr',
         'pattern': '/arti/economy/economy_general/',
         'selector': 'a.BaseArticleCard_link__Q3YFK',
+        'image_selector': 'div.BaseThumbnail_wrap__pkRwr img', # ✅ 이미지 선택자
         'dynamic': False
     },
     {
@@ -227,6 +173,7 @@ TARGET_SITES = [
         'base_url': 'https://www.hani.co.kr',
         'pattern': '/arti/economy/finance/',
         'selector': 'a.BaseArticleCard_link__Q3YFK',
+        'image_selector': 'div.BaseThumbnail_wrap__pkRwr img', # ✅ 이미지 선택자
         'dynamic': False
     },
     {
@@ -236,6 +183,7 @@ TARGET_SITES = [
         'base_url': 'https://www.hani.co.kr',
         'pattern': '/arti/international/international_general/',
         'selector': 'a.BaseArticleCard_link__Q3YFK',
+        'image_selector': 'div.BaseThumbnail_wrap__pkRwr img', # ✅ 이미지 선택자
         'dynamic': False
     },
     
@@ -247,6 +195,7 @@ TARGET_SITES = [
         'base_url': 'https://www.etoday.co.kr',
         'pattern': '/news/view/',
         'selector': 'li.sp_newslist .cluster_text_headline21 a',
+        'image_selector': 'div.cluster_thumb_link21 img',           # ✅ 이미지 선택자 추가
         'dynamic': False
     },
     {
@@ -256,6 +205,7 @@ TARGET_SITES = [
         'base_url': 'https://www.etoday.co.kr',
         'pattern': '/news/view/',
         'selector': 'li.sp_newslist .cluster_text_headline21 a',
+        'image_selector': 'div.cluster_thumb_link21 img',           # ✅ 이미지 선택자 추가
         'dynamic': False
     },
     {
@@ -265,6 +215,7 @@ TARGET_SITES = [
         'base_url': 'https://www.etoday.co.kr',
         'pattern': '/news/view/',
         'selector': 'li.sp_newslist .cluster_text_headline21 a',
+        'image_selector': 'div.cluster_thumb_link21 img',           # ✅ 이미지 선택자 추가
         'dynamic': False
     },
     {
@@ -274,6 +225,7 @@ TARGET_SITES = [
         'base_url': 'https://www.etoday.co.kr',
         'pattern': '/news/view/',
         'selector': 'li.sp_newslist .cluster_text_headline21 a',
+        'image_selector': 'div.cluster_thumb_link21 img',           # ✅ 이미지 선택자 추가
         'dynamic': False
     },
     
@@ -286,6 +238,7 @@ TARGET_SITES = [
         "container_selector": "article.recent_news",   # ✅ 이 영역 내부에서만
         "selector": "ul.news_list li a",               # ✅ 기사 링크들만 추출
         "pattern": "/article/",
+        "image_selector": "div.news_img img",          # ✅ 이미지 선택자 추가
         "dynamic": False
     },
     {
@@ -296,6 +249,7 @@ TARGET_SITES = [
         "container_selector": "article.recent_news",   # ✅ 이 영역 내부에서만
         "selector": "ul.news_list li a",               # ✅ 기사 링크들만 추출
         "pattern": "/article/",
+        "image_selector": "div.news_img img",          # ✅ 이미지 선택자 추가
         "dynamic": False
     },
     {
@@ -306,40 +260,44 @@ TARGET_SITES = [
         "container_selector": "article.recent_news",   # ✅ 이 영역 내부에서만
         "selector": "ul.news_list li a",               # ✅ 기사 링크들만 추출
         "pattern": "/article/",
+        "image_selector": "div.news_img img",          # ✅ 이미지 선택자 추가
         "dynamic": False
     },
     
-    # #딜사이트
-    # {
-    #     "name": "딜사이트",
-    #     "category": "금융",
-    #     "url": "https://dealsite.co.kr/categories/083000",
-    #     "base_url": "https://dealsite.co.kr",
-    #     "container_selector": "div.mnm-news-list",
-    #     "selector": ".mnm-news-title-wrap a",
-    #     "pattern": "/articles/",
-    #     "dynamic": False
-    # },
-    # {
-    #     "name": "딜사이트",
-    #     "category": "산업",
-    #     "url": "https://dealsite.co.kr/categories/068000",
-    #     "base_url": "https://dealsite.co.kr",
-    #     "container_selector": "div.mnm-news-list",
-    #     "selector": ".mnm-news-title-wrap a",
-    #     "pattern": "/articles/",
-    #     "dynamic": False
-    # },
-    # {
-    #     "name": "딜사이트",
-    #     "category": "기업",
-    #     "url": "https://dealsite.co.kr/categories/080057",
-    #     "base_url": "https://dealsite.co.kr",
-    #     "container_selector": "div.mnm-news-list",
-    #     "selector": ".mnm-news-title-wrap a",
-    #     "pattern": "/articles/",
-    #     "dynamic": False
-    # },
+    #딜사이트
+    {
+        "name": "딜사이트",
+        "category": "금융",
+        "url": "https://dealsite.co.kr/categories/083000",
+        "base_url": "https://dealsite.co.kr",
+        "container_selector": "div.mnm-news-list",
+        "selector": ".mnm-news-title-wrap a",
+        "pattern": "/articles/",
+        "image_selector": "img.thumb-img",  # ✅ style 속성에서 background url 추출
+        "dynamic": False
+    },
+    {
+        "name": "딜사이트",
+        "category": "산업",
+        "url": "https://dealsite.co.kr/categories/068000",
+        "base_url": "https://dealsite.co.kr",
+        "container_selector": "div.mnm-news-list",
+        "selector": ".mnm-news-title-wrap a",
+        "pattern": "/articles/",
+        "image_selector": "img.thumb-img",  # ✅ style 속성에서 background url 추출
+        "dynamic": False
+    },
+    {
+        "name": "딜사이트",
+        "category": "기업",
+        "url": "https://dealsite.co.kr/categories/080057",
+        "base_url": "https://dealsite.co.kr",
+        "container_selector": "div.mnm-news-list",
+        "selector": ".mnm-news-title-wrap a",
+        "pattern": "/articles/",
+        "image_selector": "img.thumb-img",  # ✅ style 속성에서 background url 추출
+        "dynamic": False
+    },
     
     #아주경제
     {
@@ -350,6 +308,7 @@ TARGET_SITES = [
         "container_selector": "ul.sc_news_lst",
         "selector": "a.tit",
         "pattern": "/view/",
+        "image_selector": "a.thumb img",         # ✅ 이미지 선택자 추가
         "dynamic":False
     },
     {
@@ -360,6 +319,7 @@ TARGET_SITES = [
         "container_selector": "ul.sc_news_lst",
         "selector": "a.tit",
         "pattern": "/view/",
+        "image_selector": "a.thumb img",         # ✅ 이미지 선택자 추가
         "dynamic": False
     },
     {
@@ -370,6 +330,7 @@ TARGET_SITES = [
         "container_selector": "ul.sc_news_lst",
         "selector": "a.tit",
         "pattern": "/view/",
+        "image_selector": "a.thumb img",         # ✅ 이미지 선택자 추가
         "dynamic": False
     },
     
@@ -382,6 +343,7 @@ TARGET_SITES = [
         "container_selector": "ul.allnews-list",
         "selector": "h2.news-tit a",
         "pattern": "/article/",
+        "image_selector": "figure.thumb img",    # ✅ 이미지 선택자 추가
         "dynamic": False
     },
     {
@@ -392,6 +354,7 @@ TARGET_SITES = [
         "container_selector": "ul.allnews-list",
         "selector": "h2.news-tit a",
         "pattern": "/article/",
+        "image_selector": "figure.thumb img",    # ✅ 이미지 선택자 추가
         "dynamic": False
     },
     {
@@ -402,6 +365,7 @@ TARGET_SITES = [
         "container_selector": "ul.allnews-list",
         "selector": "h2.news-tit a",
         "pattern": "/article/",
+        "image_selector": "figure.thumb img",    # ✅ 이미지 선택자 추가
         "dynamic": False
     },
     
@@ -413,6 +377,7 @@ TARGET_SITES = [
     "base_url": "https://www.joongang.co.kr",
     "selector": "h2.headline a",  # ✅ 수정된 selector
     "pattern": "/article/",
+    "image_selector": "figure.card_image img", # ✅ 이미지 선택자 추가
     "dynamic": False
     },
     {
@@ -422,6 +387,7 @@ TARGET_SITES = [
     "base_url": "https://www.joongang.co.kr",
     "selector": "h2.headline a",  # ✅ 수정된 selector
     "pattern": "/article/",
+    "image_selector": "figure.card_image img", # ✅ 이미지 선택자 추가
     "dynamic": False
     },
     {
@@ -431,6 +397,7 @@ TARGET_SITES = [
     "base_url": "https://www.joongang.co.kr",
     "selector": "h2.headline a",  # ✅ 수정된 selector
     "pattern": "/article/",
+    "image_selector": "figure.card_image img", # ✅ 이미지 선택자 추가
     "dynamic": False
     },
     {
@@ -440,6 +407,7 @@ TARGET_SITES = [
     "base_url": "https://www.joongang.co.kr",
     "selector": "h2.headline a",  # ✅ 수정된 selector
     "pattern": "/article/",
+    "image_selector": "figure.card_image img", # ✅ 이미지 선택자 추가
     "dynamic": False
     },
 
@@ -451,6 +419,7 @@ TARGET_SITES = [
     "base_url": "https://news.einfomax.co.kr",
     "selector": "h4.titles a",  # ✅ 핵심 선택자
     "pattern": "/news/articleView.html",  # ✅ 기사 링크 판별
+    "image_selector": "a.thumb img",            # ✅ 이미지 선택자 추가
     "dynamic": False
     },
     
@@ -462,6 +431,7 @@ TARGET_SITES = [
     "base_url": "https://news.mt.co.kr",
     "selector": "ul.conlist_p1 li.bundle strong.subject a", 
     "pattern": "/mtview.php",
+    "image_selector": "a.thum img",                          # ✅ 이미지 선택자
     "dynamic": False
     }, 
     {
@@ -471,6 +441,7 @@ TARGET_SITES = [
     "base_url": "https://news.mt.co.kr",
     "selector": "ul.conlist_p1 li.bundle strong.subject a", 
     "pattern": "/mtview.php",
+    "image_selector": "a.thum img",                          # ✅ 이미지 선택자
     "dynamic": False
     }, 
     {
@@ -480,6 +451,7 @@ TARGET_SITES = [
     "base_url": "https://news.mt.co.kr",
     "selector": "ul.conlist_p1 li.bundle strong.subject a", 
     "pattern": "/mtview.php",
+    "image_selector": "a.thum img",                          # ✅ 이미지 선택자
     "dynamic": False
     }, 
     {
@@ -489,6 +461,7 @@ TARGET_SITES = [
     "base_url": "https://news.mt.co.kr",
     "selector": "ul.conlist_p1 li.bundle strong.subject a", 
     "pattern": "/mtview.php",
+    "image_selector": "a.thum img",                          # ✅ 이미지 선택자
     "dynamic": False
     }, 
     
@@ -500,6 +473,7 @@ TARGET_SITES = [
         "base_url": "https://www.economist.co.kr",
         "selector": "div.analysis_wrap dt.analysis_ttl a",  # 기사 제목과 링크가 포함된 태그
         "pattern": "/article/view/",
+        "image_selector": "div.img_mark_reporter figure img", # ✅ 이미지 선택자 추가
         "dynamic": False
     },
     
@@ -511,6 +485,7 @@ TARGET_SITES = [
         "base_url": "https://www.newsis.com",
         "selector": "ul.articleList2 li p.tit a",  # 제목과 링크가 있는 <a> 태그
         "pattern": "/view/NISX",                   # 기사 본문 URL 패턴
+        "image_selector": "div.thumCont img",              # ✅ 이미지 선택자 추가
         "dynamic": False
     },
     {
@@ -520,6 +495,7 @@ TARGET_SITES = [
         "base_url": "https://www.newsis.com",
         "selector": "ul.articleList2 li p.tit a",  # 제목과 링크가 있는 <a> 태그
         "pattern": "/view/NISX",                   # 기사 본문 URL 패턴
+        "image_selector": "div.thumCont img",              # ✅ 이미지 선택자 추가
         "dynamic": False
     },
     {
@@ -529,6 +505,7 @@ TARGET_SITES = [
         "base_url": "https://www.newsis.com",
         "selector": "ul.articleList2 li p.tit a",  # 제목과 링크가 있는 <a> 태그
         "pattern": "/view/NISX",                   # 기사 본문 URL 패턴
+        "image_selector": "div.thumCont img",              # ✅ 이미지 선택자 추가
         "dynamic": False
     }, 
     {
@@ -538,8 +515,11 @@ TARGET_SITES = [
         "base_url": "https://www.newsis.com",
         "selector": "ul.articleList2 li p.tit a",  # 제목과 링크가 있는 <a> 태그
         "pattern": "/view/NISX",                   # 기사 본문 URL 패턴
+        "image_selector": "div.thumCont img",              # ✅ 이미지 선택자 추가
         "dynamic": False
-    }, 
+    },
+    
+    
 
     
 ]
