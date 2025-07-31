@@ -148,35 +148,34 @@ def get_latest_articles(site):
                 title = a.get_text(strip=True)
             full_url = urljoin(site['base_url'], href)
 
-            # ✅ 이미지 추출
             img_url = None
 
-            # 1️⃣ 기본: 부모 컨테이너에서 이미지 탐색
-            parent_container = a.find_parent(['li', 'div', 'article'])
-            if parent_container:
-                img_tag = parent_container.select_one(site['image_selector'])
+            # 매일경제 전용 처리
+            if site['name'] == "매일경제":
+                parent_container = a.find_parent('li', class_='news_node')
+                if parent_container:
+                    img_tag = parent_container.select_one('div.thumb_area > img')
+                    if img_tag:
+                        if img_tag.has_attr('data-src') and img_tag['data-src'].strip():
+                            img_url = img_tag['data-src']
+                        elif img_tag.has_attr('src') and img_tag['src'].strip():
+                            img_url = img_tag['src']
+                        img_url = urljoin(site['base_url'], img_url)
+                # 매일경제 전용 처리 후 일반 로직은 타지 않음
             else:
+                # 일반 이미지 추출 로직
+                parent_container = a.find_parent(['li', 'div', 'article'])
                 img_tag = None
-
-            # 2️⃣ 부모에서 못 찾으면 형제 figure 탐색
-            if not img_tag:
-                sibling_figure = a.find_previous_sibling('figure') or a.find_next_sibling('figure')
-                if sibling_figure:
-                    img_tag = sibling_figure.select_one('img')
-
-            # 3️⃣ 이미지 태그에서 src / data-src / style 파싱
-            if img_tag:
-                if img_tag.has_attr('src') and img_tag['src'].strip():
-                    img_url = img_tag['src']
-                elif img_tag.has_attr('data-src') and img_tag['data-src'].strip():
-                    img_url = img_tag['data-src']
-                elif img_tag.has_attr('style'):
-                    match = re.search(r'url\((.*?)\)', img_tag['style'])
-                    if match:
-                        img_url = match.group(1).strip('"').strip("'")
-
-                if img_url:
-                    img_url = urljoin(site['base_url'], img_url)
+                if parent_container:
+                    img_tag = parent_container.select_one(site['image_selector'])
+                if not img_tag:
+                    img_tag = a.select_one('img')
+                if not img_tag:
+                    img_tag = soup.select_one(f"a[href='{href}'] img")
+                if img_tag:
+                    img_url = img_tag.get('data-src') or img_tag.get('src')
+                    if img_url:
+                        img_url = urljoin(site['base_url'], img_url)
 
             # 4️⃣ 백업: data-share-img 속성 확인
             if not img_url:
@@ -220,6 +219,7 @@ def monitor_news():
                 site_key = f"{site['name']} - {site.get('category', '')}"
                 if not article_list:
                     continue
+                
 
                 top_article = article_list[0]
                 top_url = top_article['url']
