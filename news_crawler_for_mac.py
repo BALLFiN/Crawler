@@ -97,21 +97,41 @@ def get_latest_articles(site):
                 
             full_url = urljoin(site['base_url'], href)
             
-            # 이미지 추출 로직
             img_url = None
-            parent_container = a.find_parent(['li', 'div', 'article'])
-            if not parent_container: parent_container = a
-            
-            img_tag = parent_container.select_one(site.get('image_selector', 'img'))
-            
-            if img_tag:
-                img_url = img_tag.get('src') or img_tag.get('data-src')
-                if not img_url and 'style' in img_tag.attrs:
-                    match = re.search(r'url\((.*?)\)', img_tag['style'])
-                    if match: img_url = match.group(1).strip('"\'')
-            
-            if img_url:
-                img_url = urljoin(site['base_url'], img_url)
+
+            # 매일경제 전용 처리
+            if site['name'] == "매일경제":
+                parent_container = a.find_parent('li', class_='news_node')
+                if parent_container:
+                    img_tag = parent_container.select_one('div.thumb_area > img')
+                    if img_tag:
+                        if img_tag.has_attr('data-src') and img_tag['data-src'].strip():
+                            img_url = img_tag['data-src']
+                        elif img_tag.has_attr('src') and img_tag['src'].strip():
+                            img_url = img_tag['src']
+                        img_url = urljoin(site['base_url'], img_url)
+                # 매일경제 전용 처리 후 일반 로직은 타지 않음
+            else:
+                # 일반 이미지 추출 로직
+                parent_container = a.find_parent(['li', 'div', 'article'])
+                img_tag = None
+                if parent_container:
+                    img_tag = parent_container.select_one(site['image_selector'])
+                if not img_tag:
+                    img_tag = a.select_one('img')
+                if not img_tag:
+                    img_tag = soup.select_one(f"a[href='{href}'] img")
+                if img_tag:
+                    img_url = img_tag.get('data-src') or img_tag.get('src')
+                    if img_url:
+                        img_url = urljoin(site['base_url'], img_url)
+
+            # 4️⃣ 백업: data-share-img 속성 확인
+            if not img_url:
+                share_div = parent_container.select_one("div[class^='share-data-']")
+                if share_div and share_div.has_attr("data-share-img"):
+                    img_url = share_div["data-share-img"]
+
 
             articles.append({'title': title, 'url': full_url, 'image': img_url})
         return articles
