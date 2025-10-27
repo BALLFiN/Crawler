@@ -91,3 +91,4 @@ Dify는 PDF, TXT, Markdown 등 다양한 형식의 문서를 업로드하는 즉
 또한 시각적인 워크플로우를 제공함으로서 보다 직관적으로 분석 과정을 알 수 있습니다.
 
 - dify는 자체 로컬에서만 실행이 가능하여(무료버전) 외부에선 실행이 불가능합니다.
+<img width="1156" height="513" alt="스크린샷 2025-10-27 233004" src="https://github.com/user-attachments/assets/993069c6-92e7-4057-8814-3d5e6a8814ea" />
