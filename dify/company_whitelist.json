@@ -1,0 +1,505 @@
+{
+  "삼성전자": {
+    "corp_name": "삼성전자",
+    "stock_code": "005930",
+    "keywords": [ "삼성전자", "005930", "삼전", "SEC", "SAMSUNG", "갤럭시", "Galaxy", "비스포크", "BESPOKE", "엑시노스", "Exynos", "DS부문" ]
+  },
+  "SK하이닉스": {
+    "corp_name": "SK하이닉스",
+    "stock_code": "000660",
+    "keywords": [ "SK하이닉스", "000660", "하이닉스", "SK hynix", "hynix" ]
+  },
+  "LG에너지솔루션": {
+    "corp_name": "LG에너지솔루션",
+    "stock_code": "373220",
+    "keywords": [ "LG에너지솔루션", "373220", "LG엔솔", "엔솔", "LG ENERGY SOLUTION" ]
+  },
+  "삼성바이오로직스": {
+    "corp_name": "삼성바이오로직스",
+    "stock_code": "207940",
+    "keywords": [ "삼성바이오로직스", "207940", "삼바", "SAMSUNG BIOLOGICS" ]
+  },
+  "현대자동차": {
+    "corp_name": "현대자동차",
+    "stock_code": "005380",
+    "keywords": [ "현대자동차", "005380", "현대차", "현차", "HYUNDAI MOTOR", "제네시스", "아이오닉", "IONIQ", "넥쏘", "E-GMP" ]
+  },
+  "기아": {
+    "corp_name": "기아",
+    "stock_code": "000270",
+    "keywords": [ "기아", "000270", "기아차", "KIA", "EV6", "EV9", "PBV" ]
+  },
+  "셀트리온": {
+    "corp_name": "셀트리온",
+    "stock_code": "068270",
+    "keywords": [ "셀트리온", "068270", "Celltrion", "램시마", "트룩시마", "허쥬마", "유플라이마" ]
+  },
+  "한화에어로스페이스": {
+    "corp_name": "한화에어로스페이스",
+    "stock_code": "012450",
+    "keywords": [ "한화에어로스페이스", "012450", "한화에어로", "HANWHA AEROSPACE", "누리호", "K9자주포", "레드백" ]
+  },
+  "KB금융": {
+    "corp_name": "KB금융",
+    "stock_code": "105560",
+    "keywords": [ "KB금융", "105560", "KB금융지주", "KB Financial Group", "국민은행" ]
+  },
+  "NAVER": {
+    "corp_name": "NAVER",
+    "stock_code": "035420",
+    "keywords": [ "NAVER", "035420", "네이버", "하이퍼클로바X", "치지직" ]
+  },
+  "HD현대중공업": {
+    "corp_name": "HD현대중공업",
+    "stock_code": "329180",
+    "keywords": [ "HD현대중공업", "329180", "현대중공업", "HD HYUNDAI HEAVY INDUSTRIES" ]
+  },
+  "신한지주": {
+    "corp_name": "신한지주",
+    "stock_code": "055550",
+    "keywords": [ "신한지주", "055550", "신한금융지주", "Shinhan Financial Group", "신한은행" ]
+  },
+  "현대모비스": {
+    "corp_name": "현대모비스",
+    "stock_code": "012330",
+    "keywords": [ "현대모비스", "012330", "모비스", "HYUNDAI MOBIS" ]
+  },
+  "한화오션": {
+    "corp_name": "한화오션",
+    "stock_code": "042660",
+    "keywords": [ "한화오션", "042660", "대우조선해양", "Hanwha Ocean", "잠수함" ]
+  },
+  "메리츠금융지주": {
+    "corp_name": "메리츠금융지주",
+    "stock_code": "138040",
+    "keywords": [ "메리츠금융지주", "138040", "Meritz Financial Group", "메리츠화재", "메리츠증권" ]
+  },
+  "POSCO홀딩스": {
+    "corp_name": "POSCO홀딩스",
+    "stock_code": "005490",
+    "keywords": [ "POSCO홀딩스", "005490", "포스코홀딩스", "포스코", "POSCO" ]
+  },
+  "삼성물산": {
+    "corp_name": "삼성물산",
+    "stock_code": "002826",
+    "keywords": [ "삼성물산", "002826", "SAMSUNG C&T", "래미안" ]
+  },
+  "크래프톤": {
+    "corp_name": "크래프톤",
+    "stock_code": "259960",
+    "keywords": [ "크래프톤", "259960", "KRAFTON", "배틀그라운드", "배그", "PUBG" ]
+  },
+  "카카오": {
+    "corp_name": "카카오",
+    "stock_code": "035720",
+    "keywords": [ "카카오", "035720", "kakao", "카카오톡", "카톡", "다음", "Daum" ]
+  },
+  "HMM": {
+    "corp_name": "HMM",
+    "stock_code": "011200",
+    "keywords": [ "HMM", "011200", "에이치엠엠", "현대상선" ]
+  },
+  "삼성화재": {
+    "corp_name": "삼성화재",
+    "stock_code": "000810",
+    "keywords": [ "삼성화재", "000810", "SAMSUNG FIRE & MARINE INSURANCE" ]
+  },
+  "LG화학": {
+    "corp_name": "LG화학",
+    "stock_code": "051910",
+    "keywords": [ "LG화학", "051910", "LG Chem" ]
+  },
+  "하나금융지주": {
+    "corp_name": "하나금융지주",
+    "stock_code": "086790",
+    "keywords": [ "하나금융지주", "086790", "Hana Financial Group", "하나은행" ]
+  },
+  "삼성생명": {
+    "corp_name": "삼성생명",
+    "stock_code": "032830",
+    "keywords": [ "삼성생명", "032830", "SAMSUNG LIFE INSURANCE" ]
+  },
+  "SK이노베이션": {
+    "corp_name": "SK이노베이션",
+    "stock_code": "096770",
+    "keywords": [ "SK이노베이션", "096770", "SK이노", "SK INNOVATION", "SK온" ]
+  },
+  "HD한국조선해양": {
+    "corp_name": "HD한국조선해양",
+    "stock_code": "009540",
+    "keywords": [ "HD한국조선해양", "009540", "한국조선해양", "KSOE" ]
+  },
+  "한국전력": {
+    "corp_name": "한국전력",
+    "stock_code": "015760",
+    "keywords": [ "한국전력", "015760", "한전", "KEPCO" ]
+  },
+  "고려아연": {
+    "corp_name": "고려아연",
+    "stock_code": "010130",
+    "keywords": [ "고려아연", "010130", "KOREA ZINC" ]
+  },
+  "두산에너빌리티": {
+    "corp_name": "두산에너빌리티",
+    "stock_code": "034020",
+    "keywords": [ "두산에너빌리티", "034020", "두산중공업", "Doosan Enerbility" ]
+  },
+  "KT&G": {
+    "corp_name": "KT&G",
+    "stock_code": "033780",
+    "keywords": [ "KT&G", "033780", "케이티앤지", "담배인삼공사", "정관장" ]
+  },
+  "삼성중공업": {
+    "corp_name": "삼성중공업",
+    "stock_code": "010140",
+    "keywords": [ "삼성중공업", "010140", "삼중", "SAMSUNG HEAVY INDUSTRIES", "FLNG" ]
+  },
+  "삼성SDI": {
+    "corp_name": "삼성SDI",
+    "stock_code": "006400",
+    "keywords": [ "삼성SDI", "006400", "SDI" ]
+  },
+  "KT": {
+    "corp_name": "KT",
+    "stock_code": "030200",
+    "keywords": [ "KT", "030200", "케이티", "한국통신" ]
+  },
+  "SK텔레콤": {
+    "corp_name": "SK텔레콤",
+    "stock_code": "017670",
+    "keywords": [ "SK텔레콤", "017670", "SKT", "SK TELECOM", "에이닷" ]
+  },
+  "우리금융지주": {
+    "corp_name": "우리금융지주",
+    "stock_code": "316140",
+    "keywords": [ "우리금융지주", "316140", "Woori Financial Group", "우리은행" ]
+  },
+  "SK스퀘어": {
+    "corp_name": "SK스퀘어",
+    "stock_code": "402340",
+    "keywords": [ "SK스퀘어", "402340", "SK SQUARE" ]
+  },
+  "기업은행": {
+    "corp_name": "기업은행",
+    "stock_code": "024110",
+    "keywords": [ "기업은행", "024110", "IBK", "INDUSTRIAL BANK OF KOREA" ]
+  },
+  "HD현대일렉트릭": {
+    "corp_name": "HD현대일렉트릭",
+    "stock_code": "267260",
+    "keywords": [ "HD현대일렉트릭", "267260", "현대일렉트릭", "HD HYUNDAI ELECTRIC" ]
+  },
+  "LG전자": {
+    "corp_name": "LG전자",
+    "stock_code": "066570",
+    "keywords": [ "LG전자", "066570", "LG ELECTRONICS", "전장사업", "VS사업본부" ]
+  },
+  "현대로템": {
+    "corp_name": "현대로템",
+    "stock_code": "064350",
+    "keywords": [ "현대로템", "064350", "HYUNDAI ROTEM", "K2전차" ]
+  },
+  "포스코퓨처엠": {
+    "corp_name": "포스코퓨처엠",
+    "stock_code": "003670",
+    "keywords": [ "포스코퓨처엠", "003670", "포스코케미칼", "POSCO FUTURE M" ]
+  },
+  "카카오뱅크": {
+    "corp_name": "카카오뱅크",
+    "stock_code": "323410",
+    "keywords": [ "카카오뱅크", "323410", "카뱅", "kakaobank" ]
+  },
+  "LG": {
+    "corp_name": "LG",
+    "stock_code": "003550",
+    "keywords": [ "LG", "003550", "LG그룹" ]
+  },
+  "하이브": {
+    "corp_name": "하이브",
+    "stock_code": "352820",
+    "keywords": [ "하이브", "352820", "HYBE", "BTS", "방탄소년단", "위버스" ]
+  },
+  "포스코인터내셔널": {
+    "corp_name": "포스코인터내셔널",
+    "stock_code": "047050",
+    "keywords": [ "포스코인터내셔널", "047050", "포스코인터", "POSCO INTERNATIONAL" ]
+  },
+  "삼성전기": {
+    "corp_name": "삼성전기",
+    "stock_code": "009150",
+    "keywords": [ "삼성전기", "009150", "SAMSUNG ELECTRO-MECHANICS", "MLCC" ]
+  },
+  "SK": {
+    "corp_name": "SK",
+    "stock_code": "003473",
+    "keywords": [ "SK", "003473", "SK그룹" ]
+  },
+  "삼성에스디에스": {
+    "corp_name": "삼성에스디에스",
+    "stock_code": "018260",
+    "keywords": [ "삼성에스디에스", "018260", "삼성SDS", "SAMSUNG SDS" ]
+  },
+  "유한양행": {
+    "corp_name": "유한양행",
+    "stock_code": "000100",
+    "keywords": [ "유한양행", "000100", "YUHAN", "렉라자" ]
+  },
+  "현대글로비스": {
+    "corp_name": "현대글로비스",
+    "stock_code": "086280",
+    "keywords": [ "현대글로비스", "086280", "HYUNDAI GLOVIS" ]
+  },
+  "대한항공": {
+    "corp_name": "대한항공",
+    "stock_code": "003490",
+    "keywords": [ "대한항공", "003490", "KOREAN AIR" ]
+  },
+  "SK바이오팜": {
+    "corp_name": "SK바이오팜",
+    "stock_code": "326030",
+    "keywords": [ "SK바이오팜", "326030", "SK BIOPHARMACEUTICALS", "세노바메이트" ]
+  },
+  "한국항공우주": {
+    "corp_name": "한국항공우주",
+    "stock_code": "047810",
+    "keywords": [ "한국항공우주", "047810", "KAI", "KOREA AEROSPACE INDUSTRIES", "FA-50", "KF-21" ]
+  },
+  "HD현대마린솔루션": {
+    "corp_name": "HD현대마린솔루션",
+    "stock_code": "443060",
+    "keywords": [ "HD현대마린솔루션", "443060", "현대마린솔루션", "HD HYUNDAI MARINE SOLUTION" ]
+  },
+  "삼양식품": {
+    "corp_name": "삼양식품",
+    "stock_code": "003230",
+    "keywords": [ "삼양식품", "003230", "Samyang Foods", "불닭볶음면" ]
+  },
+  "한화시스템": {
+    "corp_name": "한화시스템",
+    "stock_code": "272210",
+    "keywords": [ "한화시스템", "272210", "Hanwha Systems" ]
+  },
+  "한미반도체": {
+    "corp_name": "한미반도체",
+    "stock_code": "042700",
+    "keywords": [ "한미반도체", "042700", "HANMI SEMICONDUCTOR" ]
+  },
+  "아모레퍼시픽": {
+    "corp_name": "아모레퍼시픽",
+    "stock_code": "090430",
+    "keywords": [ "아모레퍼시픽", "090430", "아모레", "AMOREPACIFIC", "설화수", "라네즈" ]
+  },
+  "DB손해보험": {
+    "corp_name": "DB손해보험",
+    "stock_code": "005830",
+    "keywords": [ "DB손해보험", "005830", "DB INSURANCE" ]
+  },
+  "S-Oil": {
+    "corp_name": "S-Oil",
+    "stock_code": "010950",
+    "keywords": [ "S-Oil", "010950", "에쓰오일", "에스오일", "샤힌프로젝트" ]
+  },
+  "LIG넥스원": {
+    "corp_name": "LIG넥스원",
+    "stock_code": "079550",
+    "keywords": [ "LIG넥스원", "079550", "LIG Nex1", "유도무기", "천궁-II" ]
+  },
+  "HD현대": {
+    "corp_name": "HD현대",
+    "stock_code": "267250",
+    "keywords": [ "HD현대", "267250", "HD HYUNDAI", "현대중공업그룹" ]
+  },
+  "한진칼": {
+    "corp_name": "한진칼",
+    "stock_code": "180640",
+    "keywords": [ "한진칼", "180640", "HANJIN KAL", "한진그룹" ]
+  },
+  "미래에셋증권": {
+    "corp_name": "미래에셋증권",
+    "stock_code": "006800",
+    "keywords": [ "미래에셋증권", "006800", "MIRAE ASSET SECURITIES" ]
+  },
+  "맥쿼리인프라": {
+    "corp_name": "맥쿼리인프라",
+    "stock_code": "088980",
+    "keywords": [ "맥쿼리인프라", "088980", "Macquarie Korea Infrastructure Fund" ]
+  },
+  "코웨이": {
+    "corp_name": "코웨이",
+    "stock_code": "021240",
+    "keywords": [ "코웨이", "021240", "COWAY", "정수기", "공기청정기" ]
+  },
+  "LS ELECTRIC": {
+    "corp_name": "LS ELECTRIC",
+    "stock_code": "010120",
+    "keywords": [ "LS ELECTRIC", "010120", "LS일렉트릭", "LS산전" ]
+  },
+  "HD현대미포": {
+    "corp_name": "HD현대미포",
+    "stock_code": "010620",
+    "keywords": [ "HD현대미포", "010620", "현대미포조선", "HD HYUNDAI MIPO" ]
+  },
+  "LG생활건강": {
+    "corp_name": "LG생활건강",
+    "stock_code": "051900",
+    "keywords": [ "LG생활건강", "051900", "LG H&H", "엘지생건" ]
+  },
+  "LG씨엔에스": {
+    "corp_name": "LG씨엔에스",
+    "stock_code": "064400",
+    "keywords": [ "LG씨엔에스", "064400", "LG CNS" ]
+  },
+  "한국타이어앤테크놀로지": {
+    "corp_name": "한국타이어앤테크놀로지",
+    "stock_code": "161390",
+    "keywords": [ "한국타이어앤테크놀로지", "161390", "한국타이어", "HANKOOK TIRE" ]
+  },
+  "두산": {
+    "corp_name": "두산",
+    "stock_code": "000150",
+    "keywords": [ "두산", "000150", "DOOSAN", "두산그룹" ]
+  },
+  "LG유플러스": {
+    "corp_name": "LG유플러스",
+    "stock_code": "032640",
+    "keywords": [ "LG유플러스", "032640", "LGU+", "엘지유플러스" ]
+  },
+  "오리온": {
+    "corp_name": "오리온",
+    "stock_code": "271560",
+    "keywords": [ "오리온", "271560", "ORION", "초코파이" ]
+  },
+  "삼성카드": {
+    "corp_name": "삼성카드",
+    "stock_code": "002978",
+    "keywords": [ "삼성카드", "002978", "SAMSUNG CARD" ]
+  },
+  "두산밥캣": {
+    "corp_name": "두산밥캣",
+    "stock_code": "241560",
+    "keywords": [ "두산밥캣", "241560", "Doosan Bobcat" ]
+  },
+  "현대건설": {
+    "corp_name": "현대건설",
+    "stock_code": "000720",
+    "keywords": [ "현대건설", "000720", "HYUNDAI E&C", "힐스테이트" ]
+  },
+  "NH투자증권": {
+    "corp_name": "NH투자증권",
+    "stock_code": "005940",
+    "keywords": [ "NH투자증권", "005940", "NH INVESTMENT & SECURITIES" ]
+  },
+  "효성중공업": {
+    "corp_name": "효성중공업",
+    "stock_code": "298040",
+    "keywords": [ "효성중공업", "298040", "HYOSUNG HEAVY INDUSTRIES", "수소충전소" ]
+  },
+  "LG디스플레이": {
+    "corp_name": "LG디스플레이",
+    "stock_code": "034220",
+    "keywords": [ "LG디스플레이", "034220", "LGD", "엘지디", "LG DISPLAY" ]
+  },
+  "포스코DX": {
+    "corp_name": "포스코DX",
+    "stock_code": "022100",
+    "keywords": [ "포스코DX", "022100", "POSCO DX" ]
+  },
+  "삼성증권": {
+    "corp_name": "삼성증권",
+    "stock_code": "016360",
+    "keywords": [ "삼성증권", "016360", "SAMSUNG SECURITIES" ]
+  },
+  "한국금융지주": {
+    "corp_name": "한국금융지주",
+    "stock_code": "071050",
+    "keywords": [ "한국금융지주", "071050", "KOREA INVESTMENT HOLDINGS", "한국투자증권" ]
+  },
+  "에코프로머티": {
+    "corp_name": "에코프로머티",
+    "stock_code": "450080",
+    "keywords": [ "에코프로머티", "450080", "에코프로머티리얼즈", "Ecopro Materials", "전구체" ]
+  },
+  "삼성E&A": {
+    "corp_name": "삼성E&A",
+    "stock_code": "028050",
+    "keywords": [ "삼성E&A", "028050", "삼성엔지니어링", "SAMSUNG E&A" ]
+  },
+  "카카오페이": {
+    "corp_name": "카카오페이",
+    "stock_code": "377300",
+    "keywords": [ "카카오페이", "377300", "kakaopay" ]
+  },
+  "SKC": {
+    "corp_name": "SKC",
+    "stock_code": "011790",
+    "keywords": [ "SKC", "011790", "에스케이씨" ]
+  },
+  "CJ제일제당": {
+    "corp_name": "CJ제일제당",
+    "stock_code": "097950",
+    "keywords": [ "CJ제일제당", "097950", "CJ CheilJedang", "햇반", "비비고" ]
+  },
+  "CJ": {
+    "corp_name": "CJ",
+    "stock_code": "001040",
+    "keywords": [ "CJ", "001040", "CJ그룹" ]
+  },
+  "한화솔루션": {
+    "corp_name": "한화솔루션",
+    "stock_code": "009830",
+    "keywords": [ "한화솔루션", "009830", "Hanwha Solutions" ]
+  },
+  "LS": {
+    "corp_name": "LS",
+    "stock_code": "006260",
+    "keywords": [ "LS", "006260", "LS그룹" ]
+  },
+  "넷마블": {
+    "corp_name": "넷마블",
+    "stock_code": "251270",
+    "keywords": [ "넷마블", "251270", "Netmarble" ]
+  },
+  "GS": {
+    "corp_name": "GS",
+    "stock_code": "078930",
+    "keywords": [ "GS", "078930", "GS그룹", "GS칼텍스", "GS리테일" ]
+  },
+  "알테오젠": {
+    "corp_name": "알테오젠",
+    "stock_code": "196170",
+    "keywords": [ "알테오젠", "196170", "Alteogen" ]
+  },
+  "에코프로비엠": {
+    "corp_name": "에코프로비엠",
+    "stock_code": "247540",
+    "keywords": [ "에코프로비엠", "247540", "Ecopro BM" ]
+  },
+  "HLB": {
+    "corp_name": "HLB",
+    "stock_code": "028300",
+    "keywords": [ "HLB", "028300", "에이치엘비", "리보세라닙" ]
+  },
+  "에코프로": {
+    "corp_name": "에코프로",
+    "stock_code": "086520",
+    "keywords": [ "에코프로", "086520", "Ecopro" ]
+  },
+  "레인보우로보틱스": {
+    "corp_name": "레인보우로보틱스",
+    "stock_code": "277810",
+    "keywords": [ "레인보우로보틱스", "277810", "Rainbow Robotics", "이족보행로봇" ]
+  },
+  "미국": {
+    "keywords": ["FOMC", "PPI", "CPI", "S&P500", "USA", "U.S.", "ISM", "NASDAQ", "Fed", "America", "SPX", "USD",
+      "IRA", "NYSE", "US", "GDP", "관세", "고용보고서", "나스닥", "뉴욕", "다우존스", "달러", "달러화", "미국", "미국증시", "미국채",
+      "미중", "연준", "기술주", "트럼프", "파월", "美"
+    ]
+  },
+  "코스피": {
+    "keywords": ["KOSPI", "KRX", "PER", "PBR", "EPS", "거래대금", "거래량", "거래소", "게인투자자", "공매도", "공시", "국내증시",
+      "권리락", "급등", "급락", "기관", "기관투자자", "동시호가", "매도", "매수", "매출", "배당", "상장", "상장기업", "상장폐지",
+      "시가총액", "시장조성자", "신규상장", "액면분할", "연간실적", "연기금", "영업이익", "유가증권시장", "이은형", "장중",
+      "종가", "지수", "코넥스", "코스닥", "코스피", "한국거래소", "한국증시"
+    ]
+  }
+}

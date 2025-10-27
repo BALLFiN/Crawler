@@ -1,6 +1,7 @@
-# 📰 실시간 뉴스 크롤러 (Kafka & MongoDB)
+# 📰 실시간 뉴스 크롤러 (Kafka & MongoDB & dify)
 
 다양한 경제 뉴스 사이트에서 실시간으로 기사를 수집하고, 기사 내용에 언급된 기업을 태깅하여 Kafka로 스트리밍하는 시스템입니다.
+또한 해당 뉴스를 거시경제, 산업, 기업 정보를 이용하여 뉴스를 보다 폭넑게 이해할 수 있도록 한다. 
 
 ## 📌 주요 기능
 
@@ -19,7 +20,15 @@
 ├── company_whitelist.py      # 태깅할 기업 정보 및 키워드, 가중치 정의
 ├── news_list.py              # 크롤링 대상 사이트 목록 및 설정
 ├── requirements.txt          # 필요 패키지 목록
-└── README.md                 # 프로젝트 설명 파일
+├── README.md                 # 프로젝트 설명 파일
+└── dify  
+    ├── add_category.py         # 기업-증권 분류 매칭
+    ├── dipy_api.py             # dify api관련 코드
+    ├── dipy_knowledge.py       # dify KnowledgeBase 업로드, 최신화 함수
+    ├── get_news_and_classify.py    #뉴스 송신, 기업 분류 함수
+    ├── industry_whitelist.py   # 기업 코드, 기업 WICS, WICS-기업분류 정보
+    └── main.py                 # dify로 뉴스 전달 - 분석 내용 확인
+                  
 ```
 
 ## 🚀 실행 방법
@@ -72,3 +81,13 @@
 - **company_tag**: `identify_company_module.py`에 의해 태깅된 기업명입니다.
 - **company_score**: 태깅 정확도를 나타내는 점수입니다.
 - **stock_code**: `news_list.py`의 `STOCK_CODE` 딕셔너리를 참조하여 매핑된 종목 코드입니다.
+
+---
+## Dify
+본 워크플로우는 Dify의 내재적 장점을 활용하여 기존의 복잡한 RAG 파이프라인 구축 과정을 획기적으로 단순화했습니다.
+
+Dify는 PDF, TXT, Markdown 등 다양한 형식의 문서를 업로드하는 즉시 자동으로 청킹(Chunking), 임베딩(Embedding) 및 인덱싱을 처리하는 **내장 지식(Knowledge) 기능**을 제공합니다.
+
+또한 시각적인 워크플로우를 제공함으로서 보다 직관적으로 분석 과정을 알 수 있습니다.
+
+- dify는 자체 로컬에서만 실행이 가능하여(무료버전) 외부에선 실행이 불가능합니다.
